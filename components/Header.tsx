@@ -14,23 +14,23 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] ${
-        scrolled ? 'bg-white/70 backdrop-blur-xl py-4 shadow-[0_1px_0_0_rgba(0,0,0,0.05)]' : 'bg-transparent py-8'
+        scrolled ? 'bg-white/70 backdrop-blur-xl py-3 shadow-[0_1px_0_0_rgba(0,0,0,0.05)]' : 'bg-transparent py-6 lg:py-8'
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
+      <div className="container mx-auto px-4 lg:px-12 flex items-center justify-between">
         <motion.div 
           whileHover={{ x: lang === 'en' ? 2 : -2 }}
           transition={{ type: "spring", stiffness: 400, damping: 25 }}
-          className="flex items-center gap-3 group cursor-pointer"
+          className="flex items-center gap-2 lg:gap-3 group cursor-pointer"
         >
           <motion.div 
             whileHover={{ rotate: 15, scale: 1.1 }}
             transition={{ type: "spring", stiffness: 400, damping: 15 }}
-            className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-serif italic text-xl"
+            className="w-8 h-8 lg:w-10 lg:h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold text-sm lg:text-xl"
           >
             V
           </motion.div>
-          <span className="text-2xl font-bold tracking-tight text-ink">Vite</span>
+          <span className="text-xl lg:text-2xl font-black tracking-tight text-ink">Vite</span>
         </motion.div>
         
         <nav className="hidden lg:flex items-center gap-10">
@@ -57,21 +57,21 @@ export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           </motion.a>
         </nav>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 lg:gap-6">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
-            className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-ink/40 hover:text-accent transition-colors"
+            className="flex items-center gap-1.5 text-[10px] lg:text-[11px] font-black uppercase tracking-widest text-ink/40 hover:text-accent transition-colors py-2"
           >
-            <Globe className="w-4 h-4" />
+            <Globe className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
             <span>{lang === 'en' ? 'AR' : 'EN'}</span>
           </motion.button>
 
           <motion.button 
             whileHover={{ scale: 1.03, y: -1 }}
             whileTap={{ scale: 0.97 }}
-            className="px-8 py-3 bg-accent text-white text-[13px] font-bold rounded-full shadow-lg shadow-accent/5 hover:shadow-accent/20 transition-all duration-300"
+            className="px-5 lg:px-8 py-2 lg:py-3 bg-accent text-white text-[11px] lg:text-[13px] font-black rounded-full shadow-lg shadow-accent/5 hover:shadow-accent/20 transition-all duration-300"
           >
             {t.buttons.getStarted}
           </motion.button>
