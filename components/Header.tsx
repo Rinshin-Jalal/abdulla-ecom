@@ -1,0 +1,82 @@
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useLanguage } from '../LanguageContext';
+import { Globe } from 'lucide-react';
+
+interface HeaderProps {
+  scrolled: boolean;
+}
+
+export const Header: React.FC<HeaderProps> = ({ scrolled }) => {
+  const { lang, setLang, t } = useLanguage();
+
+  return (
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] ${
+        scrolled ? 'bg-white/70 backdrop-blur-xl py-4 shadow-[0_1px_0_0_rgba(0,0,0,0.05)]' : 'bg-transparent py-8'
+      }`}
+    >
+      <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
+        <motion.div 
+          whileHover={{ x: lang === 'en' ? 2 : -2 }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          className="flex items-center gap-3 group cursor-pointer"
+        >
+          <motion.div 
+            whileHover={{ rotate: 15, scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-serif italic text-xl"
+          >
+            V
+          </motion.div>
+          <span className="text-2xl font-bold tracking-tight text-ink">Vite</span>
+        </motion.div>
+        
+        <nav className="hidden lg:flex items-center gap-10">
+          <motion.a 
+            href="#features" 
+            className="link-underline text-[13px] font-bold text-ink/40 hover:text-ink transition-colors duration-300"
+            whileHover={{ y: -1 }}
+          >
+            {t.nav.features}
+          </motion.a>
+          <motion.a 
+            href="#how-it-works" 
+            className="link-underline text-[13px] font-bold text-ink/40 hover:text-ink transition-colors duration-300"
+            whileHover={{ y: -1 }}
+          >
+            {t.nav.howItWorks}
+          </motion.a>
+          <motion.a 
+            href="#" 
+            className="link-underline text-[13px] font-bold text-ink/40 hover:text-ink transition-colors duration-300"
+            whileHover={{ y: -1 }}
+          >
+            {t.nav.testimonials}
+          </motion.a>
+        </nav>
+
+        <div className="flex items-center gap-6">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
+            className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-ink/40 hover:text-accent transition-colors"
+          >
+            <Globe className="w-4 h-4" />
+            <span>{lang === 'en' ? 'AR' : 'EN'}</span>
+          </motion.button>
+
+          <motion.button 
+            whileHover={{ scale: 1.03, y: -1 }}
+            whileTap={{ scale: 0.97 }}
+            className="px-8 py-3 bg-accent text-white text-[13px] font-bold rounded-full shadow-lg shadow-accent/5 hover:shadow-accent/20 transition-all duration-300"
+          >
+            {t.buttons.getStarted}
+          </motion.button>
+        </div>
+      </div>
+    </header>
+  );
+};
