@@ -1,108 +1,159 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite — Beautiful Online Stores, Built For You</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      :root {
-        --canvas: #FAF9F6;
-        --ink: #1C1C1C;
-        --accent: #3A4D39; 
-        --clay: #C08261; 
-        --surface: #F2F0EA;
-        --border: #E5E2D9;
-        --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-        --ease-in-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      body {
-        font-family: 'Montserrat', 'IBM Plex Sans Arabic', sans-serif;
-        background-color: var(--canvas);
-        color: var(--ink);
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-        font-weight: 400;
-      }
-      [dir="rtl"] body {
-        font-family: 'IBM Plex Sans Arabic', sans-serif;
-      }
-      
-      .text-accent { color: var(--accent); }
-      .bg-accent { background-color: var(--accent); }
-      .border-accent { border-color: var(--accent); }
-      
-      .text-huge {
-        font-family: 'Montserrat', sans-serif;
-        font-size: clamp(2.2rem, 10vw, 6rem);
-        line-height: 1.1;
-        letter-spacing: -0.03em;
-        font-weight: 900;
-      }
 
-      .soft-shadow {
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
-        transition: box-shadow 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite — Beautiful Online Stores, Built For You</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: 'var(--canvas)',
+            ink: 'var(--ink)',
+            accent: 'var(--accent)',
+            clay: 'var(--clay)',
+            surface: 'var(--surface)',
+            border: 'var(--border)',
+          }
+        }
       }
-      .soft-shadow:hover {
-        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.08);
-      }
+    }
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --canvas: #FAF9F6;
+      --ink: #1C1C1C;
+      --accent: #3A4D39;
+      --clay: #C08261;
+      --surface: #F2F0EA;
+      --border: #E5E2D9;
+      --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+      --ease-in-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
+      --hover-scale: 1.02;
+      --tap-scale: 0.98;
+      --transition-medium: 0.6s var(--ease-out-expo);
+      --transition-fast: 0.4s var(--ease-out-expo);
+    }
 
-      html {
-        scroll-behavior: smooth;
-        scrollbar-gutter: stable;
-      }
+    body {
+      font-family: 'Montserrat', 'IBM Plex Sans Arabic', sans-serif;
+      background-color: var(--canvas);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 400;
+    }
 
-      ::-webkit-scrollbar { width: 5px; }
-      ::-webkit-scrollbar-track { background: var(--canvas); }
-      ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
-      
-      .bg-noise {
-        position: relative;
-      }
-      .bg-noise::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
-        pointer-events: none;
-        z-index: 9999;
-        opacity: 0.6;
-      }
+    [dir="rtl"] body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+    }
 
-      .link-underline {
-        position: relative;
-      }
-      .link-underline::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 1.5px;
-        bottom: -2px;
-        left: 0;
-        background-color: var(--accent);
-        transition: width 0.4s var(--ease-out-expo);
-      }
-      .link-underline:hover::after {
-        width: 100%;
-      }
-      [dir="rtl"] .link-underline::after {
-        left: auto;
-        right: 0;
-      }
-      
-      h1, h2, h3 {
-        font-weight: 900;
-      }
+    .text-accent {
+      color: var(--accent);
+    }
 
-      /* Fix mobile font sizes for Arabic */
-      [dir="rtl"] .text-huge {
-        line-height: 1.3;
-      }
-    </style>
-    <script type="importmap">
+    .bg-accent {
+      background-color: var(--accent);
+    }
+
+    .border-accent {
+      border-color: var(--accent);
+    }
+
+    .text-huge {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.2rem, 10vw, 6rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      font-weight: 900;
+    }
+
+    .soft-shadow {
+      box-shadow: 0 10px 40px -10px rgba(28, 28, 28, 0.04);
+      transition: box-shadow var(--transition-medium), transform var(--transition-medium);
+    }
+
+    .soft-shadow:hover {
+      box-shadow: 0 40px 80px -20px rgba(28, 28, 28, 0.08);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-gutter: stable;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--canvas);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 10px;
+    }
+
+    .bg-noise {
+      position: relative;
+    }
+
+    .bg-noise::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    .link-underline {
+      position: relative;
+    }
+
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1.5px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.4s var(--ease-out-expo);
+    }
+
+    .link-underline:hover::after {
+      width: 100%;
+    }
+
+    [dir="rtl"] .link-underline::after {
+      left: auto;
+      right: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 900;
+    }
+
+    /* Fix mobile font sizes for Arabic */
+    [dir="rtl"] .text-huge {
+      line-height: 1.3;
+    }
+  </style>
+  <script type="importmap">
     {
       "imports": {
         "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
@@ -113,9 +164,11 @@
       }
     }
     </script>
-  </head>
-  <body class="bg-noise">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+</head>
+
+<body class="bg-noise">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>

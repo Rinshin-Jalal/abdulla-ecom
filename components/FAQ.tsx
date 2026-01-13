@@ -11,18 +11,18 @@ const FAQItem: React.FC<{ question: string, answer: string }> = ({ question, ans
 
   return (
     <div className="border-b border-border/60 last:border-0">
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 lg:py-10 flex items-center justify-between text-left group focus:outline-none"
       >
         <span className={`text-lg lg:text-2xl font-black ${isAr ? 'pl-4 lg:pl-12' : 'pr-4 lg:pr-12'} transition-colors duration-500 text-ink group-hover:text-accent tracking-tight leading-snug`}>{question}</span>
-        <motion.div 
-          animate={{ 
-            rotate: isOpen ? 180 : 0, 
+        <motion.div
+          animate={{
+            rotate: isOpen ? 180 : 0,
             backgroundColor: isOpen ? 'var(--accent)' : 'var(--surface)',
-            color: isOpen ? '#FFFFFF' : '#1C1C1C50'
+            color: isOpen ? '#FFFFFF' : 'var(--ink)'
           }}
-          transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
+          transition={{ duration: 0.4, ease: [0.19, 1, 0.22, 1] }}
           className="w-8 h-8 lg:w-10 lg:h-10 flex-shrink-0 rounded-full flex items-center justify-center shadow-sm"
         >
           <ChevronDown className="w-4 h-4 lg:w-5 lg:h-5" />
@@ -30,11 +30,11 @@ const FAQItem: React.FC<{ question: string, answer: string }> = ({ question, ans
       </button>
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+            transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
             className="overflow-hidden"
           >
             <p className="pb-8 lg:pb-10 text-ink/40 text-sm lg:text-xl leading-relaxed max-w-4xl font-normal">
@@ -54,7 +54,7 @@ export const FAQ: React.FC = () => {
     <section className="py-20 lg:py-40 bg-surface/20">
       <div className="container mx-auto px-4 lg:px-12">
         <div className="max-w-4xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -64,7 +64,7 @@ export const FAQ: React.FC = () => {
             <span className="text-clay text-[10px] lg:text-[11px] font-black uppercase tracking-[0.5em] mb-3 lg:mb-4 block">{t.faq.label}</span>
             <h2 className="text-3xl lg:text-6xl font-black tracking-tight text-ink">{t.faq.title}</h2>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

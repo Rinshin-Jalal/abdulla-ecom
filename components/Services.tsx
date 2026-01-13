@@ -24,7 +24,7 @@ export const Services: React.FC = () => {
     <section id="features" className="py-20 lg:py-40 bg-surface/30 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-12 relative z-10">
         <div className="max-w-3xl mb-12 lg:mb-24">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: isAr ? 10 : -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -34,7 +34,7 @@ export const Services: React.FC = () => {
             <Sparkles className={`w-3.5 h-3.5 text-clay ${isAr ? 'rotate-180' : ''}`} />
             <span className="text-clay text-[10px] lg:text-[11px] font-black uppercase tracking-[0.4em]">{t.services.label}</span>
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -43,7 +43,7 @@ export const Services: React.FC = () => {
           >
             {t.services.title1} <br /><span className="text-accent opacity-90">{t.services.title2}</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -62,9 +62,9 @@ export const Services: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: idx * 0.1, duration: 1, ease: [0.19, 1, 0.22, 1] }}
-              className="p-8 lg:p-12 bg-white rounded-[1.5rem] lg:rounded-[2.5rem] border border-border/40 relative overflow-hidden group shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] transition-all duration-700"
+              className="p-8 lg:p-12 bg-white rounded-[1.5rem] lg:rounded-[2.5rem] border border-border/40 relative overflow-hidden group soft-shadow"
             >
-              <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-2xl lg:rounded-3xl bg-surface flex items-center justify-center mb-6 lg:mb-10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-700 shadow-sm">
+              <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-2xl lg:rounded-3xl bg-surface flex items-center justify-center mb-6 lg:mb-10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-sm">
                 {f.icon}
               </div>
               <h3 className="text-xl lg:text-2xl font-black mb-3 lg:mb-4 tracking-tight text-ink group-hover:text-accent transition-colors duration-500">{f.title}</h3>
@@ -74,8 +74,8 @@ export const Services: React.FC = () => {
             </motion.div>
           ))}
         </div>
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -83,7 +83,7 @@ export const Services: React.FC = () => {
           className="mt-16 lg:mt-28 text-center"
         >
           <p className="text-ink/40 font-black uppercase text-[10px] lg:text-[11px] tracking-[0.2em] mb-6 lg:mb-8">{t.services.actionLabel}</p>
-          <motion.button 
+          <motion.button
             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px -10px rgba(58, 77, 57, 0.2)" }}
             whileTap={{ scale: 0.98 }}
             className="w-full sm:w-auto px-10 lg:px-14 py-4 lg:py-5 border-[2.5px] border-accent text-accent font-black rounded-full hover:bg-accent hover:text-white transition-all duration-500"

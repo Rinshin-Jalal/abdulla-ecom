@@ -11,9 +11,9 @@ export const HowItWorks: React.FC = () => {
     <section id="how-it-works" className="py-20 lg:py-40 bg-canvas relative">
       <div className="container mx-auto px-4 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-40 items-start">
-          
+
           <div className="w-full lg:w-2/5 lg:sticky lg:top-44 h-fit z-10 text-center lg:text-left rtl:lg:text-right">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: isAr ? 20 : -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -26,7 +26,7 @@ export const HowItWorks: React.FC = () => {
                     كيف <br />
                     <span className="text-accent relative inline-block py-2">
                       نعمل.
-                      <motion.span 
+                      <motion.span
                         initial={{ width: 0 }}
                         whileInView={{ width: '100%' }}
                         viewport={{ once: true }}
@@ -40,7 +40,7 @@ export const HowItWorks: React.FC = () => {
                     How it <br />
                     <span className="text-accent relative inline-block py-2">
                       works.
-                      <motion.span 
+                      <motion.span
                         initial={{ width: 0 }}
                         whileInView={{ width: '100%' }}
                         viewport={{ once: true }}
@@ -56,34 +56,34 @@ export const HowItWorks: React.FC = () => {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="p-8 lg:p-12 bg-white rounded-[2rem] lg:rounded-[3rem] border border-border shadow-[0_4px_20px_rgba(0,0,0,0.02)] hidden lg:block hover:shadow-2xl transition-all duration-700 group"
+              className="p-8 lg:p-12 bg-white rounded-[2rem] lg:rounded-[3rem] border border-border soft-shadow hidden lg:block"
             >
-               <p className="text-[11px] font-black uppercase tracking-[0.3em] text-accent/50 mb-3">{t.howItWorks.soundGood}</p>
-               <h3 className="text-2xl font-black text-ink mb-8 transition-colors duration-500 group-hover:text-accent">{t.howItWorks.makeItHappen}</h3>
-               <motion.button 
+              <p className="text-[11px] font-black uppercase tracking-[0.3em] text-accent/50 mb-3">{t.howItWorks.soundGood}</p>
+              <h3 className="text-2xl font-black text-ink mb-8 transition-colors duration-500 group-hover:text-accent">{t.howItWorks.makeItHappen}</h3>
+              <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-5 bg-accent text-white font-black rounded-full transition-all duration-500 shadow-xl shadow-accent/5 hover:shadow-accent/20"
-               >
-                 {t.howItWorks.cta}
-               </motion.button>
+                className="w-full py-5 bg-accent text-white font-black rounded-full transition-all duration-500 shadow-xl shadow-accent/10 hover:shadow-accent/30"
+              >
+                {t.howItWorks.cta}
+              </motion.button>
             </motion.div>
           </div>
 
           <div className="w-full lg:w-3/5 space-y-6 lg:space-y-12 relative">
             {t.howItWorks.steps.map((step, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: idx * 0.15 }}
-                className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:gap-10 p-8 lg:p-12 rounded-[2rem] lg:rounded-[3.5rem] bg-white border border-border/40 hover:shadow-[0_40px_80px_rgba(0,0,0,0.05)] transition-all duration-700 text-center sm:text-left rtl:sm:text-right"
+                className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:gap-10 p-8 lg:p-12 rounded-[2rem] lg:rounded-[3.5rem] bg-white border border-border/40 soft-shadow text-center sm:text-left rtl:sm:text-right"
               >
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-surface border border-border/50 flex items-center justify-center text-2xl lg:text-4xl font-black text-clay shadow-sm">
@@ -98,9 +98,9 @@ export const HowItWorks: React.FC = () => {
                 </div>
               </motion.div>
             ))}
-            
+
             <div className="lg:hidden pt-4">
-              <motion.button 
+              <motion.button
                 whileTap={{ scale: 0.98 }}
                 className="w-full py-4 bg-accent text-white font-black text-sm rounded-full shadow-xl"
               >
