@@ -61,14 +61,15 @@ export const HowItWorks: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="p-8 lg:p-12 bg-white rounded-[2rem] lg:rounded-[3rem] border border-border soft-shadow hidden lg:block"
+              className="p-8 lg:p-10 bg-white rounded-[2rem] lg:rounded-[2.5rem] border border-border soft-shadow hidden lg:block"
             >
               <p className="text-[11px] font-black uppercase tracking-[0.3em] text-accent/50 mb-3">{t.howItWorks.soundGood}</p>
               <h3 className="text-2xl font-black text-ink mb-8 transition-colors duration-500 group-hover:text-accent">{t.howItWorks.makeItHappen}</h3>
               <motion.button
-                whileHover={{ scale: 1.02, y: -2 }}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-5 bg-accent text-white font-black rounded-full transition-all duration-500 shadow-xl shadow-accent/10 hover:shadow-accent/30"
+                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full py-4 bg-accent text-white font-black rounded-full transition-all duration-500 shadow-xl shadow-accent/10"
               >
                 {t.howItWorks.cta}
               </motion.button>
@@ -83,7 +84,7 @@ export const HowItWorks: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: idx * 0.15 }}
-                className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:gap-10 p-8 lg:p-12 rounded-[2rem] lg:rounded-[3.5rem] bg-white border border-border/40 soft-shadow text-center sm:text-left rtl:sm:text-right"
+                className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:gap-8 p-6 lg:p-10 rounded-[2rem] lg:rounded-[2.5rem] bg-white border border-border/40 shadow-sm text-center sm:text-left rtl:sm:text-right"
               >
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 lg:w-24 lg:h-24 rounded-full bg-surface border border-border/50 flex items-center justify-center text-2xl lg:text-4xl font-black text-clay shadow-sm">

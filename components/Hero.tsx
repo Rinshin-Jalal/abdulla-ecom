@@ -72,11 +72,12 @@ export const Hero: React.FC = () => {
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6"
             >
               <motion.button
-                whileHover={{ scale: 1.02, y: -2 }}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto px-8 lg:px-10 py-4 lg:py-5 bg-accent text-white font-black text-sm rounded-full shadow-xl shadow-accent/10 hover:shadow-accent/30 transition-all flex items-center justify-center gap-3"
+                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full sm:w-auto px-8 lg:px-10 py-3.5 lg:py-4 bg-accent text-white font-black text-sm rounded-full shadow-lg shadow-accent/10 transition-all flex items-center justify-center gap-3"
               >
-                {t.hero.cta} <ArrowRight className={`w-4 h-4 lg:w-5 lg:h-5 ${isAr ? 'rotate-180' : ''}`} />
+                {t.hero.cta} <ArrowRight className={`w-4 h-4 lg:w-4.5 lg:h-4.5 ${isAr ? 'rotate-180' : ''}`} />
               </motion.button>
               <div className="flex flex-col items-center lg:items-start">
                 <span className="text-[9px] lg:text-[10px] font-black text-ink/30 uppercase tracking-[0.2em]">{t.hero.liveAt}</span>
@@ -90,7 +91,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, scale: 0.98, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: 0.2 }}
-              className="bg-white rounded-[1.5rem] lg:rounded-[2.5rem] overflow-hidden soft-shadow border border-border/60 group/mockup"
+              className="bg-white rounded-[1.25rem] lg:rounded-[2rem] overflow-hidden shadow-sm border border-border/60 group/mockup"
             >
               <div className="p-4 lg:p-6 bg-white flex items-center justify-between border-b border-border/50">
                 <div className="flex items-center gap-2 lg:gap-3">

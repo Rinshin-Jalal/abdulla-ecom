@@ -62,13 +62,13 @@ export const Services: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: idx * 0.1, duration: 1, ease: [0.19, 1, 0.22, 1] }}
-              className="p-8 lg:p-12 bg-white rounded-[1.5rem] lg:rounded-[2.5rem] border border-border/40 relative overflow-hidden group soft-shadow"
+              className="p-6 lg:p-8 bg-white rounded-[1.5rem] lg:rounded-[2rem] border border-border/40 relative overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-500"
             >
-              <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-2xl lg:rounded-3xl bg-surface flex items-center justify-center mb-6 lg:mb-10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-sm">
+              <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl lg:rounded-2xl bg-surface flex items-center justify-center mb-5 lg:mb-8 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
                 {f.icon}
               </div>
-              <h3 className="text-xl lg:text-2xl font-black mb-3 lg:mb-4 tracking-tight text-ink group-hover:text-accent transition-colors duration-500">{f.title}</h3>
-              <p className="text-sm lg:text-base text-ink/40 leading-relaxed group-hover:text-ink/60 transition-colors duration-500 font-normal">
+              <h3 className="text-lg lg:text-xl font-black mb-2 lg:mb-3 tracking-tight text-ink group-hover:text-accent transition-colors duration-500">{f.title}</h3>
+              <p className="text-xs lg:text-sm text-ink/40 leading-relaxed group-hover:text-ink/60 transition-colors duration-500 font-normal">
                 {f.desc}
               </p>
             </motion.div>
@@ -84,9 +84,10 @@ export const Services: React.FC = () => {
         >
           <p className="text-ink/40 font-black uppercase text-[10px] lg:text-[11px] tracking-[0.2em] mb-6 lg:mb-8">{t.services.actionLabel}</p>
           <motion.button
-            whileHover={{ scale: 1.05, boxShadow: "0 20px 40px -10px rgba(58, 77, 57, 0.2)" }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto px-10 lg:px-14 py-4 lg:py-5 border-[2.5px] border-accent text-accent font-black rounded-full hover:bg-accent hover:text-white transition-all duration-500"
+            onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+            className="w-full sm:w-auto px-8 lg:px-10 py-3.5 lg:py-4 border-[2px] border-accent text-accent font-black rounded-full hover:bg-accent hover:text-white transition-all duration-500 text-sm lg:text-base"
           >
             {t.services.cta}
           </motion.button>

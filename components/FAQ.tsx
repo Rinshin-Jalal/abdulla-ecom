@@ -69,7 +69,7 @@ export const FAQ: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
-            className="bg-white p-6 md:p-14 rounded-[2rem] lg:rounded-[3.5rem] shadow-[0_4px_30px_rgba(0,0,0,0.02)] border border-border/50"
+            className="bg-white p-8 md:p-12 rounded-[1.5rem] lg:rounded-[2.5rem] shadow-sm border border-border/50"
           >
             {t.faq.items.map((item, idx) => (
               <FAQItem key={idx} question={item.q} answer={item.a} />

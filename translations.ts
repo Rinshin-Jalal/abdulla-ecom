@@ -24,7 +24,7 @@ export const translations = {
       label: "Everything You Need",
       title1: "One platform,",
       title2: "endless possibilities.",
-      desc: "From design to delivery, we handle every aspect of your online store so you can focus on what matters most — your products.",
+      desc: "From design to delivery, we handle every aspect of your online store so you can focus on what matters most, your products.",
       cta: "Explore All Features",
       actionLabel: "Ready to see it in action?",
       items: [
@@ -46,7 +46,7 @@ export const translations = {
       mobileCta: "Get Started Now",
       steps: [
         { title: "Tell Us Your Vision", desc: "Share your brand, products, and goals. We'll understand exactly what you need." },
-        { title: "We Build & Launch", desc: "Our team designs, develops, and launches your store — usually within 2 weeks." },
+        { title: "We Build & Launch", desc: "Our team designs, develops, and launches your store, usually within 2 weeks." },
         { title: "Grow Together", desc: "We manage updates, support customers, and help scale your business." }
       ]
     },
@@ -105,7 +105,7 @@ export const translations = {
       label: "كل ما تحتاجه",
       title1: "منصة واحدة،",
       title2: "إمكانيات لا حصر لها.",
-      desc: "من التصميم إلى التوصيل، نتولى كل جوانب متجرك الإلكتروني لتتمكن من التركيز على ما يهم حقاً — منتجاتك.",
+      desc: "من التصميم إلى التوصيل، نتولى كل جوانب متجرك الإلكتروني لتتمكن من التركيز على ما يهم حقاً، منتجاتك.",
       cta: "استكشف كافة المزايا",
       actionLabel: "هل أنت مستعد لرؤيتها واقعاً؟",
       items: [
@@ -127,7 +127,7 @@ export const translations = {
       mobileCta: "ابدأ الآن",
       steps: [
         { title: "أخبرنا برؤيتك", desc: "شاركنا علامتك التجارية ومنتجاتك وأهدافك. سنفهم بالضبط ما تحتاجه." },
-        { title: "نبني ونطلق", desc: "يقوم فريقنا بتصميم وتطوير وإطلاق متجرك — عادة في غضون أسبوعين." },
+        { title: "نبني ونطلق", desc: "يقوم فريقنا بتصميم وتطوير وإطلاق متجرك، عادة في غضون أسبوعين." },
         { title: "ننمو معاً", desc: "ندير التحديثات، ندعم العملاء، ونساعد في توسيع نطاق عملك." }
       ]
     },
